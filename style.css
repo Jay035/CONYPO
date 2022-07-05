@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    /* padding: 0 1rem; */
+    overflow-x: hidden;
+    line-height: 1.2;
+    /* background: #f5f5f5; */
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+i{
+    font-size: 24px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 0 1rem;
+    position: absolute;
+    top: 1em;
+    z-index: 9999999;
+    width: 100%;
+    padding: .3em 1rem;
+    color: #f5f5f5;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hamburger{
+    display: flex;
+    flex-direction: column;
+}
+
+.bar{
+    width: 16px;
+    height: 3px;
+    display: block;
+    background-color: #f5f5f5;
+}
+
+.bar:nth-child(2){
+    margin-block: 2px;
+}
+
+.mobile--menu{
+    background: rgb(0, 0, 0, .5);
+    width: 100%;
+    transition: .3s ease-in;
+    position: absolute;
+    left: -100%;
+    top: 0;
+}
+
+.desktop--menu{
+    display: none;
+}
+
+.mobile--menu.active{
+    left: 0;
+}
+
+#close--btn{
+    /* background-color: #000; */
+    margin-top: 1em;
+    transition: .3s ease-in;
+    cursor: pointer;
+    width: max-content;
+}
+
+#close-btn img:hover{
+    transform: rotate(70deg);
+}
+
+.mobile--menu .wrapper{
+    width: 60%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    color: #000;
+    z-index: 99999;
+    padding: 1.5rem;
+}
+
+.wrapper ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2em;
+}
+
+.mobile--menu li a{
+    color: #000 !important;
+    transition: .2s ease;
+}
+
+.mobile--menu li a:hover,
+.desktop--menu li a:hover{
+    font-weight: 600;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social__media--links{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* DONATE BUTTON */
+.donate{
+    border-radius: 6px;
+    padding: .5em 1em;
+    background-color: #14628f;
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.donate:hover,
+button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------- */
+
+main{
+    background: url('./assets/peterObi.jpg') center no-repeat;
+    background-size: cover;
+    background-position: 45% center;
+    /* background-color: rgba(99, 93, 93, 0.705); */
+    /* backdrop-filter: blur(45px); */
+    /* background-color: #0b405f; */
+    background-blend-mode: lighten;
+    height: 100vh;
+    width: 100%;
+}
+
+section{
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* HERO SECTION  */
+#hero--section{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 1.3rem;
+    padding-top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(2px);
+}
+
+.hero--content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+/* SECTION TITLES */
+.title{
+    margin-block: .5em;
+    font-size: 1.5rem;
+}
+
+#about--us{
+    margin-block: 1.5em;
+    /* font-size: 0.875rem; */
+}
+
+#about--us h3{
+    margin-block: 1em .5em;
+}
+
+p{
+    opacity: .9;
+}
+
+/* ------------------- FORM --------------------- */
+form{
+    margin-block: 1em;
+}
+
+form div{
+    display: grid;
+    gap: 10px;
+}
+
+input{
+    display: block;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+    border-radius: 3px;
+    width: 90%;
+    margin-inline: auto;
+    padding: .2rem .5rem ;
+}
+
+/* submit button */
+button#submit{
+    margin-top: 1em;
+    width: 20%;
+    border-radius: 6px;
+    margin-inline: auto;
+    padding: .8em 0;
+    /* background: rgb(119, 118, 118); */
+    background-color: #14628f;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+footer{
+    padding-bottom: 2rem;
+    margin-top: 1.5em;
+    width: 90%;
+    margin-inline: auto;
+}
+
+footer .links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 600;
+}
+
+footer .social__media--links{
+    gap: 10px;
+}
+
+footer a{
+    color: #000;
+    text-decoration: underline;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+/* copyright text  */
+footer p{
+    width: fit-content;
+    margin: 1.5em auto .5em;
+}
+
+/* -------------------------------------------------- */
+/* TABLET screen size */
+
+@media screen and (min-width: 768px) {
+    main{
+        background-position: 50% center;
+    }
+
+    .hero--content{
+        font-size: 1.7em;
+        width: 60% !important;
+    }
+
+    form div{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+/* LAPTOP screen sizes */
+@media screen and (min-width: 1000px) {
+    body{
+        font-size: 1.1rem;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .mobile--menu{
+        display: none;
+    }
+
+    .desktop--menu{
+        display: flex;
+    }
+    
+    .desktop--menu ul{
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    section#about--us,
+    section#join--us{
+        width: 70% !important;
+    }
+
+    form input{
+        padding: 0.375rem 0.75rem;
+    }
+
+    .title{
+        font-size: 1.7rem;
+    }
+}
