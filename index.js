@@ -1,4 +1,4 @@
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('.mobile--menu');
 const menuBtn = document.querySelector('nav');
 document.getElementById('close--btn').addEventListener('click', closeMenu)
 const menuItem = document.querySelectorAll('.menu--item');
