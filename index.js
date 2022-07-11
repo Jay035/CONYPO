@@ -7,7 +7,6 @@ const inputField = document.querySelectorAll('input')
 // EVENT LISTENERS
 document.getElementById('close--btn').addEventListener('click', closeMenu)
 document.getElementById('submit').addEventListener('click', submitForm)
-document.querySelector('.close__menu--btn').addEventListener('click', closeModal);
 
 // display menu function
 menuBtn.addEventListener('click', () => {
@@ -39,8 +38,12 @@ let firstName = id('firstName'),
     PhoneNo = id('PhoneNo'),
     errorMessage = classes('error');
 
+    PhoneNo.maxLength = 11;
+
 // submit form function
 function submitForm(e){
+    e.preventDefault();
+
     let validator = (id, serial, message) => {
         if(id.value.trim() === ''){
             errorMessage[serial].textContent = message;
@@ -49,32 +52,44 @@ function submitForm(e){
             inputEmpty();
         }
         else if(firstName.value !== "" && email.value !== "" && StateOfOrigin.value !== "" && LGA.value !== "" && StateOfResidence !== "" && City.value !== "" && PhoneNo.value !== ""){
+            // if(!email.value.contains('@')){
+            //     console.log('@ not found')
+            //     errorMessage[serial].textContent = "Please include an @ in the email address"
+            // }
             let params = {
                 name : firstName.value,
                 email : email.value,
                 StateOfOrigin : StateOfOrigin.value,
                 LGA : LGA.value,
                 StateOfResidence : StateOfResidence.value,
-                city : City,
+                city : City.value,
                 PhoneNo: PhoneNo.value
             }
             emailjs.send("service_bjedmzf","template_2eyl4gh", params)
                 .then(res => {
+                    console.log('status', res.OK)
                     success();
                     errorMessage[serial].textContent = '';
+                        // clear input values after form has been submitted
+                    document.getElementById('modal__donate--button').addEventListener('click', () => {
+                        inputField.forEach(input => {
+                            input.value = "";
+                        })
+                    })
                 }).catch(
                     error()
                 )
             // modal.classList.remove('hidden')
+            
         }
         else{
-            success();
+            // success();
             errorMessage[serial].textContent = '';
             id.style.borderBottom = '2px solid green';
             e.returnValue = true;
         }
-        e.preventDefault();
     };
+
 
 
     validator(firstName, 0, 'First name can\'t be blank');
@@ -110,11 +125,12 @@ function success(){
         </div>
     `
 
-    const donateButton = document.createElement('button');
-    donateButton.innerHTML = `
-        <!-- donate button -->
-        <a href="" class="donate" id="modal__donate--button">DONATE</a>
-    `;
+    const donateButton = document.createElement('a');
+    donateButton.href = "https://google.com";
+    donateButton.className = "donate";
+    donateButton.id = "modal__donate--button";
+    donateButton.innerText = "DONATE";
+    
     swal({
         content: modal,
         icon: "success",
