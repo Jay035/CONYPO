@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <!-- Remix icon CDN -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- AOS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- emailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("lb1b_JO9EI8mQHvGl")
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -34,6 +46,7 @@
             <div class="social__media--links">
                 <a href=""><i class="ri-facebook-box-line"></i></a>
                 <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
             </div>
             <a href="" class="donate">DONATE</a>
         </div>
@@ -53,48 +66,103 @@
     </header>
     <main>
         <!-- HERO SECTION -->
-        <section id="hero--section">
+        <section id="hero--section" data-aos="fade-in">
             <!-- <div class="hero--img"></div> -->
-            <div class="hero--content">
+            <div data-aos="zoom-in" class="hero--content">
                 <h2>Coalition of Nigerian youths for Peter Obi</h2>
             </div>
         </section>
         <!-- ABOUT US -->
-        <section id="about--us">
+        <section id="about--us" data-aos="fade-in" data-aos-duration="1000">
             <h1 class="title">ABOUT US</h1>
             <div class="">
                 <p>The Coalition of Nigerian Youths for Peter Obi (CONYPO) is a support group founded with the aim of mobilizing votes for the Labour Party's presidential candidate, Mr Peter Obi. Elections are not won online and we aim to achieve this through intense campaigning and sensitization of the electorates to even the most remote parts of the country.
                     There is hope and together we can build a better Nigeria by electing a credible and competent leader come 2023.</p>
-                <div class="CONYPO--fund">
+                <div class="CONYPO--fund" data-aos="fade-up" data-aos-duration="1000">
                     <h3>The CONYPO fund</h3>
                     <p>The Coalition of Nigerian youths for Peter Obi fund is used to mobilize and facilitate all campaign activities of the group across all states of the federation and the FCT. This includes organizing rallys, printing of branded materials (t-shirts, fliers, flags, banners etc), sponsoring of radio and TV ads, social media ads as well as helicopter parades in select cities. We have a target to raise N1 billion naira for this project and we are calling on every young Nigerian who supports Mr Peter Obi both at home and in the diaspora to please donate a minimum of N1000 to the fund to enable us achieve our goals and objectives.</p>
                 </div>
             </div>
         </section>
-        <section id="join--us">
-            <h1 class="title">JOIN THE FIGHT</h1>
+        <section id="join--us" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="title">JOIN THE FIGHT FOR A BETTER NIGERIA</h1>
             <p>To join the coalition, please fill out the form below. Membership is open to every young Nigerian who supports the presidential bid of Mr Peter Obi.</p>
-            <!-- MEMBERSHIP -->
-            <form action="">
-                <div class="">
-                    <input type="text" name="fullName" placeholder="First Name*" required>
-                    <input type="text" name="email" placeholder="Email address*" required>
-                    <input type="text" name="StateOfOrigin" placeholder="State of Origin*" required>
-                    <input type="text" name="LGA" placeholder="LGA*" required>
-                    <input type="text" name="StateOfResidence" placeholder="State of residence*" required>
-                    <input type="text" name="city" placeholder="City*" required>
-                    <input type="text" name="PhoneNo" placeholder="Phone number*" required>
+            <!-- JOIN IN THE FIGHT FORM -->
+            <form>
+                <div class="form__wrapper">
+                    <!-- first name -->
+                    <div class="form__input">
+                        <input type="text" name="name" id="firstName" placeholder="First Name" required>
+                        <div>First Name<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
+                    <!-- email -->
+                    <div class="form__input">
+                        <input type="email" name="email" id="email" placeholder="Email address" required>
+                        <div>Email<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
+                    <!-- State Of Origin -->
+                    <div class="form__input">
+                        <input type="text" name="StateOfOrigin" id="StateOfOrigin" placeholder="State of Origin*" required>
+                        <div>State of Origin<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
+                    <!-- lGA -->
+                    <div class="form__input">
+                        <input type="text" name="LGA" id="LGA" placeholder="LGA" required>
+                        <div>LGA<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
+                    <!-- State Of Residence -->
+                    <div class="form__input">
+                        <input type="text" name="StateOfResidence" id="StateOfResidence" placeholder="State of residence" required>
+                        <div>State of Residence<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
+                    <!-- city -->
+                    <div class="form__input">
+                        <input type="text" name="city" id="city" placeholder="City" required>
+                        <div>City<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
+                    <!-- Phone number -->
+                    <div class="form__input">
+                        <input type="number" name="PhoneNo" id="PhoneNo" placeholder="Phone number" required>
+                        <div>Phone No<span>*</span></div>
+                        <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
+                    </div>
                 </div>
                 <button id="submit">I'M IN</button>
             </form>
+
+            <!-- Modal -->
+            <div data-aos="fade-up"  class="modal hidden" id="form__submit--modal">
+                <div id="close--btn" class="close__menu--btn">
+                    <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg"><g fill="#f5f5f5" fill-rule="evenodd"><path d="m2.393.98 22.628 22.628-1.414 1.414L.979 2.395z"/><path d="M.98 23.607 23.609.979l1.414 1.414L2.395 25.021z"/></g></svg>
+                </div>
+                <!-- modal content -->
+                <div class="modal--content">
+                    <p>We're glad you've joined us in the fight for a better Nigeria. Please do well to donate to fund our campaign and outreach programs. Also follow us on our social media channels to stay informed on all activities</p>
+                    <!-- donate button -->
+                    <a href="" class="donate">DONATE</a>
+                    <!-- social-media-links -->
+                    <div class="social__media--links">
+                        <a href=""><i class="ri-facebook-box-line"></i></a>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <footer>
+        <footer data-aos="fade-up">
             <div class="links">
                 <!-- social-media-links -->
                 <div class="social__media--links">
                     <a href="">Facebook</a>
                     <a href="">Twitter</a>
+                    <a href="">Instagram</a>
                     <!-- <a href=""><i class="ri-facebook-box-line"></i></a>
                     <a href=""><i class="ri-twitter-fill"></i></a> -->
                 </div>
@@ -105,5 +173,15 @@
     </main>
 
     <script src="./index.js"></script>
+    <!-- sweet alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        
+    </script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- initialize AOS  -->
+    <script>AOS.init();</script>
+
 </body>
 </html>
