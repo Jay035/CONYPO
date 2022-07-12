@@ -48,14 +48,11 @@ function submitForm(e){
         if(id.value.trim() === ''){
             errorMessage[serial].textContent = message;
             id.style.borderBottom = '2px solid red';
-            e.returnValue = false;
+            // e.returnValue = false;
             inputEmpty();
         }
         else if(firstName.value !== "" && email.value !== "" && StateOfOrigin.value !== "" && LGA.value !== "" && StateOfResidence !== "" && City.value !== "" && PhoneNo.value !== ""){
-            // if(!email.value.contains('@')){
-            //     console.log('@ not found')
-            //     errorMessage[serial].textContent = "Please include an @ in the email address"
-            // }
+            
             let params = {
                 name : firstName.value,
                 email : email.value,
@@ -80,13 +77,12 @@ function submitForm(e){
                     error()
                 )
             // modal.classList.remove('hidden')
-            
         }
         else{
             // success();
             errorMessage[serial].textContent = '';
             id.style.borderBottom = '2px solid green';
-            e.returnValue = true;
+            // e.returnValue = true;
         }
     };
 
@@ -100,15 +96,6 @@ function submitForm(e){
     validator(City, 5, 'City can\'t be blank');
     validator(PhoneNo, 6, 'Phone number can\'t be blank');
     
-    // e.preventDefault();
-    // inputField.forEach(input => {
-    //     if(input.value !== "") {
-    //         e.preventDefault();
-    //         modal.classList.remove('hidden');
-    //         input.value = "";
-    //     }
-    //     return;
-    // })
 }
 
 function success(){
@@ -116,6 +103,7 @@ function success(){
     modal.innerHTML = `
         <div class="modal--content">
             <p>We're glad you've joined us in the fight for a better Nigeria. Please do well to donate to fund our campaign and outreach programs. Also follow us on our social media channels to stay informed on all activities.</p>
+            <a href="" id="modal__donate--button" class="donate"></a>
             <!-- social-media-links -->
             <div id="modal__social__media--links" class="social__media--links">
                 <a href=""><i class="ri-facebook-box-line"></i></a>
@@ -125,16 +113,13 @@ function success(){
         </div>
     `
 
-    const donateButton = document.createElement('a');
-    donateButton.href = "https://google.com";
-    donateButton.className = "donate";
-    donateButton.id = "modal__donate--button";
-    donateButton.innerText = "DONATE";
+    const donateButton = document.createElement('button');
+    donateButton.innerHTML = `<a href="" id="modal__donate--button" class="donate"></a>`;
     
     swal({
         content: modal,
         icon: "success",
-        button: "OKAY!",
+        // button: donateButton,
     });
 }
 
