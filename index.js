@@ -2,11 +2,11 @@ const menu = document.querySelector('.mobile--menu');
 const menuBtn = document.querySelector('nav');
 const menuItem = document.querySelectorAll('.menu--item');
 const modal = document.getElementById('form__submit--modal');
-const inputField = document.querySelectorAll('input')
+const inputField = document.querySelectorAll('input');
 
 // EVENT LISTENERS
-document.getElementById('close--btn').addEventListener('click', closeMenu)
-document.getElementById('submit').addEventListener('click', submitForm)
+document.getElementById('close--btn').addEventListener('click', closeMenu);
+document.getElementById('submit').addEventListener('click', submitForm);
 
 // display menu function
 menuBtn.addEventListener('click', () => {
