@@ -11,7 +11,6 @@ document.getElementById('submit').addEventListener('click', submitForm);
 // display menu function
 menuBtn.addEventListener('click', () => {
     menu.classList.add('active');
-    console.log(menuItem)
 })
 
 // close menu function
@@ -112,6 +111,7 @@ function success(){
     `;
     
     swal({
+        // title: "YAY!",
         content: modal,
         icon: "success",
         button: "OKAY",

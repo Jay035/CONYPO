@@ -90,7 +90,8 @@ nav{
 nav p,
 .hero--content,
 .title,
-.donate{
+.donate,
+.CONYPO--fund h3{
     font-family: 'athleticsextrabold', sans-serif;
 }
 
@@ -246,7 +247,7 @@ section{
     overflow: hidden;
     text-align: center;
     color: #f5f5f5;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 700;
     padding-top: 0;
     background-color: rgba(0, 0, 0, .5);
@@ -298,12 +299,13 @@ section{
 }
 
 #about--us{
-    margin-block: 2em;
+    margin-block: 2em 3em;
     padding-top: 1rem;
     /* font-size: 0.875rem; */
 }
 
 #about--us h3{
+    font-weight: 700;
     margin-block: 1em .5em;
 }
 
@@ -312,7 +314,7 @@ p{
 }
 
 .CONYPO--fund{
-    margin-top: 2em;
+    margin-top: 3em;
 }
 
 .CONYPO--fund h3,
@@ -322,6 +324,7 @@ p{
 
 #join--us{
     position: relative;
+    top: 3em;
 }
 
 /* ------------------- FORM --------------------- */
@@ -389,6 +392,11 @@ button#submit{
     letter-spacing: 1.5px;
 }
 
+/* when user hovers over button */
+button#submit:hover{
+    filter: brightness(80%);
+}
+
 /* Modal  */
 /* .modal{
     width: 100%;
@@ -437,7 +445,9 @@ button#submit{
 
 footer{
     padding-bottom: 2rem;
-    margin-top: 2.6em;
+    /* margin-top: 2.6em; */
+    position: relative;
+    top: 5em;
     width: 90%;
     margin-inline: auto;
 }
@@ -474,7 +484,8 @@ footer p{
     align-items: center;
     gap: 5px;
     justify-content: center;
-    margin-top: 1.6em;
+    font-weight: 600;
+    margin-top: 2.5em;
 }
 
 footer p,
