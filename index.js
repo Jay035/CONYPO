@@ -64,14 +64,12 @@ function submitForm(e){
             }
             emailjs.send("service_bjedmzf","template_2eyl4gh", params)
                 .then(res => {
-                    console.log('status', res.OK)
+                    // console.log('status', res.OK)
                     success();
                     errorMessage[serial].textContent = '';
                         // clear input values after form has been submitted
                     document.getElementById('modal__donate--button').addEventListener('click', () => {
-                        inputField.forEach(input => {
-                            input.value = "";
-                        })
+                        inputField.value = ""
                     })
                 }).catch(
                     error()
@@ -103,7 +101,7 @@ function success(){
     modal.innerHTML = `
         <div class="modal--content">
             <p>We're glad you've joined us in the fight for a better Nigeria. Please do well to donate to fund our campaign and outreach programs. Also follow us on our social media channels to stay informed on all activities.</p>
-            <a href="" id="modal__donate--button" class="donate"></a>
+            <a href="" id="modal__donate--button" class="donate">DONATE</a>
             <!-- social-media-links -->
             <div id="modal__social__media--links" class="social__media--links">
                 <a href=""><i class="ri-facebook-box-line"></i></a>
@@ -111,15 +109,12 @@ function success(){
                 <a href=""><i class="ri-instagram-fill"></i></a>
             </div>
         </div>
-    `
-
-    const donateButton = document.createElement('button');
-    donateButton.innerHTML = `<a href="" id="modal__donate--button" class="donate"></a>`;
+    `;
     
     swal({
         content: modal,
         icon: "success",
-        // button: donateButton,
+        button: "OKAY",
     });
 }
 
