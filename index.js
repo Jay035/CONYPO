@@ -58,7 +58,7 @@ function submitForm(e){
                 StateOfOrigin : StateOfOrigin.value,
                 LGA : LGA.value,
                 StateOfResidence : StateOfResidence.value,
-                city : City.value,
+                City : City.value,
                 PhoneNo: PhoneNo.value
             }
             emailjs.send("service_bjedmzf","template_2eyl4gh", params)
@@ -82,8 +82,6 @@ function submitForm(e){
             // e.returnValue = true;
         }
     };
-
-
 
     validator(firstName, 0, 'First name can\'t be blank');
     validator(email, 1, 'Email can\'t be blank');
@@ -134,9 +132,4 @@ function inputEmpty(){
         icon: "error",
         button: "OKAY",
     });
-}
-
-// close modal function
-function closeModal(){
-    modal.classList.add('hidden')
 }
