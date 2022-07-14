@@ -508,6 +508,10 @@ footer i{
         font-size: 1.1rem;
     }
 
+    nav{
+        width: 215.05px;
+    }
+
     .hamburger{
         display: none;
     }
