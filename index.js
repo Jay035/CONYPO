@@ -1,3 +1,4 @@
+const preloader = document.getElementById('preloader');
 const menu = document.querySelector('.mobile--menu');
 const menuBtn = document.querySelector('nav');
 const menuItem = document.querySelectorAll('.menu--item');
@@ -7,6 +8,14 @@ const inputField = document.querySelectorAll('input');
 // EVENT LISTENERS
 document.getElementById('close--btn').addEventListener('click', closeMenu);
 document.getElementById('submit').addEventListener('click', submitForm);
+
+// Hide preloader
+
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        preloader.classList.toggle('loaded');
+    }, 1000);
+})
 
 // display menu function
 menuBtn.addEventListener('click', () => {
@@ -28,7 +37,7 @@ menuItem.forEach(item => {
 let id = (id) => document.getElementById(id);
 let classes = (classes) => document.getElementsByClassName(classes);
 
-let firstName = id('firstName'),
+let fullName = id('name'),
     email = id('email'),
     StateOfOrigin = id('StateOfOrigin'),
     LGA = id('LGA'),
@@ -50,10 +59,10 @@ function submitForm(e){
             // e.returnValue = false;
             inputEmpty();
         }
-        else if(firstName.value !== "" && email.value !== "" && StateOfOrigin.value !== "" && LGA.value !== "" && StateOfResidence !== "" && City.value !== "" && PhoneNo.value !== ""){
+        else if(fullName.value !== "" && email.value !== "" && StateOfOrigin.value !== "" && LGA.value !== "" && StateOfResidence !== "" && City.value !== "" && PhoneNo.value !== ""){
             
             let params = {
-                name : firstName.value,
+                name : fullName.value,
                 email : email.value,
                 StateOfOrigin : StateOfOrigin.value,
                 LGA : LGA.value,
@@ -83,7 +92,7 @@ function submitForm(e){
         }
     };
 
-    validator(firstName, 0, 'First name can\'t be blank');
+    validator(fullName, 0, 'First name can\'t be blank');
     validator(email, 1, 'Email can\'t be blank');
     validator(StateOfOrigin, 2, 'State of origin can\'t be blank');
     validator(LGA, 3, 'LGA can\'t be blank');
