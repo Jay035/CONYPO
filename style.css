@@ -148,7 +148,9 @@ nav p,
 .hero--content,
 .title,
 .donate,
-.CONYPO--fund h3{
+.CONYPO--fund h3,
+#our--mission .motivation,
+.convener{
     font-family: 'athleticsextrabold', sans-serif;
 }
 
@@ -364,17 +366,16 @@ p{
 }
 
 #our--mission{
-    margin-block: 1.5em 8em;
+    margin-block: 1.5em 6em;
     position: relative;
 }
 
 #our--mission .motivation{
-    margin-block: .8em .5em;
-    font-family: 'athleticsextrabold', sans-serif;
-    font-size: 1.3em;
+    margin-block: 1.5em .5em;
+    font-size: 2em;
     line-height: 1.4;
     width: 100%;
-    max-width: 600px;
+    max-width: 720px;
     margin-inline: auto;
 }
 
@@ -382,20 +383,13 @@ p{
     font-size: 1.5em;
 }
 
-.attribution{
-    position: absolute;
-    right: 0;
-    text-align: left;
-    /* font-family: 'athleticsbold', sans-serif; */
-}
-
 .convener{
-    font-family: 'athleticsextrabold', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    opacity: 1;
 }
 
 .attribution span{
- color: #000;
+    color: #000;
 }
 
 /* CONYPO Fund section */
@@ -576,6 +570,16 @@ footer i{
     /* arrow icon */
     .hero-__section--scroll--arrow i{
         font-size: 34px;
+    }
+
+    #our--mission{
+        margin-bottom: 8em;
+    }
+
+    .attribution{ 
+        position: absolute; 
+        right: 3em; 
+        text-align: left; 
     }
 
     form div{
