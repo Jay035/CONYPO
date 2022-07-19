@@ -94,6 +94,8 @@ span{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding-inline: 1rem;
 }
 
 .preloader_img{
