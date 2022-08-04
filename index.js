@@ -4,17 +4,17 @@ const menuBtn = document.querySelector('nav');
 const menuItem = document.querySelectorAll('.menu--item');
 const modal = document.getElementById('form__submit--modal');
 const inputField = document.querySelectorAll('input');
+const donateButtons = document.querySelectorAll('.donate');
 
 // EVENT LISTENERS
 document.getElementById('close--btn').addEventListener('click', closeMenu);
 document.getElementById('submit').addEventListener('click', submitForm);
 
 // Hide preloader
-
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         preloader.classList.toggle('loaded');
-    }, 1000);
+    }, 2000);
 })
 
 // display menu function
@@ -34,6 +34,15 @@ menuItem.forEach(item => {
     })
 })
 
+// show donate modal when donate button is clicked
+donateButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('click')
+        showDonateModal();
+    })
+})
+
 let id = (id) => document.getElementById(id);
 let classes = (classes) => document.getElementsByClassName(classes);
 
@@ -46,17 +55,13 @@ let fullName = id('name'),
     PhoneNo = id('PhoneNo'),
     errorMessage = classes('error');
 
-    PhoneNo.maxLength = 11;
+    PhoneNo.value.maxLength = 11;
 
 // submit form function
 function submitForm(e){
     e.preventDefault();
 
-    let validator = (id, serial, message) => {
-        if(id.value.trim() === ''){
-            errorMessage[serial].textContent = message;
-            id.style.borderBottom = '2px solid red';
-            // e.returnValue = false;
+        if(fullName.value === "" || email.value === "" || StateOfOrigin.value === "" || LGA.value === "" || StateOfResidence === "" || City.value === "" || PhoneNo.value === ""){
             inputEmpty();
         }
         else if(fullName.value !== "" && email.value !== "" && StateOfOrigin.value !== "" && LGA.value !== "" && StateOfResidence !== "" && City.value !== "" && PhoneNo.value !== ""){
@@ -70,43 +75,30 @@ function submitForm(e){
                 City : City.value,
                 PhoneNo: PhoneNo.value
             }
-            emailjs.send("service_bjedmzf","template_2eyl4gh", params)
+            emailjs.send("service_8zy8chf","template_6bq1uj4", params)
                 .then(res => {
-                    // console.log('status', res.OK)
                     success();
-                    errorMessage[serial].textContent = '';
-                        // clear input values after form has been submitted
+                    // clear input values after form has been submitted
                     document.getElementById('modal__donate--button').addEventListener('click', () => {
                         inputField.value = ""
                     })
                 }).catch(
                     error()
                 )
-            // modal.classList.remove('hidden')
         }
         else{
             // success();
-            errorMessage[serial].textContent = '';
-            id.style.borderBottom = '2px solid green';
+            // errorMessage[serial].textContent = '';
+            // id.style.borderBottom = '2px solid green';
             // e.returnValue = true;
         }
-    };
-
-    validator(fullName, 0, 'First name can\'t be blank');
-    validator(email, 1, 'Email can\'t be blank');
-    validator(StateOfOrigin, 2, 'State of origin can\'t be blank');
-    validator(LGA, 3, 'LGA can\'t be blank');
-    validator(StateOfResidence, 4, 'State of Residence can\'t be blank');
-    validator(City, 5, 'City can\'t be blank');
-    validator(PhoneNo, 6, 'Phone number can\'t be blank');
-    
 }
-
+// success modal
 function success(){
     const modal = document.createElement('div');
     modal.innerHTML = `
         <div class="modal--content">
-            <p>We're glad you've joined us in the fight for a better Nigeria. Please do well to donate to fund our campaign and outreach programs. Also follow us on our social media channels to stay informed on all activities.</p>
+            <p>Welcome to the coalition of Nigerian youths for Peter Obi. Pls invite your family and friends to join us in the fight for a better Nigeria. Also follow our social media accounts to stay informed on all activities of the group.</p>
             <a href="" id="modal__donate--button" class="donate">DONATE</a>
             <!-- social-media-links -->
             <div id="modal__social__media--links" class="social__media--links">
@@ -121,6 +113,15 @@ function success(){
         // title: "YAY!",
         content: modal,
         icon: "success",
+        button: "OKAY",
+    });
+}
+
+function showDonateModal(){
+    swal({
+        title: "Hello!",
+        text: "Thanks for your interest in donating to our project fund. Please register by filling out the form and you'll be informed when we start making donations. Collectively our contributions will help us to achieve our goals ❤️",
+        // icon: "success",
         button: "OKAY",
     });
 }

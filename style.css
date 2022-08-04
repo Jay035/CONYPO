@@ -150,7 +150,8 @@ nav p,
 .donate,
 .CONYPO--fund h3,
 #our--mission .motivation,
-.convener{
+.convener,
+.footer-logo{
     font-family: 'athleticsextrabold', sans-serif;
 }
 
@@ -372,7 +373,7 @@ p{
 
 #our--mission .motivation{
     margin-block: 1.5em .5em;
-    font-size: 2em;
+    font-size: 1.3em;
     line-height: 1.4;
     width: 100%;
     max-width: 720px;
@@ -384,7 +385,7 @@ p{
 }
 
 .convener{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     opacity: 1;
 }
 
@@ -510,14 +511,25 @@ i:hover{
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
 
+.swal-button:hover{
+    background-color: #29652b !important;
+    filter: brightness(80%);
+}
+
 /* --------------------------------------------------------- */
 /* FOOTER  */
 footer{
     padding-bottom: 2rem;
     position: relative;
-    top: 5em;
+    top: 8em;
     width: 90%;
     margin-inline: auto;
+}
+
+.footer-logo{
+    font-size: 1.7rem;
+    opacity: .95;
+    margin-bottom: .3em;
 }
 
 footer .links{
@@ -529,7 +541,7 @@ footer .links{
 }
 
 footer .social__media--links{
-    gap: 10px;
+    gap: 20px;
 }
 
 footer .links i{
@@ -538,7 +550,7 @@ footer .links i{
 }
 
 footer a{
-    color: #000;
+    color: rgb(65, 63, 63);
 }
 
 /* copyright text  */
