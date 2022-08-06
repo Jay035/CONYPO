@@ -12,15 +12,15 @@
     <!-- AOS CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto:wght@500&display=swap" rel="stylesheet"> -->
     <!-- emailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             emailjs.init("9xSpStYaIHsMQ-2NC")
         })();
-    </script>
+    </script> -->
 </head>
 <body>
     <div id="preloader">
@@ -115,7 +115,7 @@
                 <h1 class="title">JOIN THE FIGHT FOR A BETTER NIGERIA</h1>
                 <p>To join the coalition, please fill out the form below. Membership is open to every young Nigerian who supports the presidential bid of Mr Peter Obi.</p>
                 <!-- JOIN IN THE FIGHT FORM -->
-                <form data-aos="fade-up" data-aos-duration="1000" data-delay="400">
+                <form data-aos="fade-up" data-aos-duration="1000" data-delay="400" id="contactForm">
                     <div class="form__wrapper">
                         <!-- first name -->
                         <div class="form__input">
@@ -160,7 +160,7 @@
                             <div data-aos="fade-up" data-aos-duration="1000" class="error"></div>
                         </div>
                     </div>
-                    <button id="submit">I'M IN</button>
+                    <button type="submit" id="submit">I'M IN</button>
                 </form>
             </section>
             
@@ -181,6 +181,8 @@
             </footer>
         </main>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+        <script src="./firebase.js"></script>
         <script src="./index.js"></script>
 
         <!-- sweet alert JS -->

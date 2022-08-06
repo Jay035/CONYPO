@@ -1,0 +1,23 @@
+{
+  "name": "peterobi-campaign",
+  "version": "1.0.0",
+  "description": "A website used in promoting Labour Part's Candidate, Peter Obi of the 2023 Nigerian Election",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jay035/CONYPO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jay035/CONYPO/issues"
+  },
+  "homepage": "https://github.com/Jay035/CONYPO#readme",
+  "dependencies": {
+    "firebase": "^9.9.2"
+  }
+}
